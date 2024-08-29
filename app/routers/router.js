@@ -4,28 +4,14 @@ let router = express.Router();
 
 
 const customers = require('../controllers/controller.js');
-const libros = require('../controllers/Libro.js'); 
-const prestamos = require('../controllers/Prestamo.js');
+const departamentos = require('../controllers/departamento.js');
 
 
-   
-    router.post('/api/libros/create', libros.create);
-    router.get('/api/libros/all', libros.retrieveAllLibros);
-    router.get('/api/libros/onebyid/:id', libros.getLibroById);
-    router.get('/api/libros/filteringbyauthor', libros.filteringByAuthor);
-    router.get('/api/libros/pagination', libros.pagination);
-    router.get('/api/libros/pagefiltersort', libros.pagingFilteringSorting);
-    router.put('/api/libros/update/:id', libros.updateById);
-    router.delete('/api/libros/delete/:id', libros.deleteById);
-
-    router.post('/api/prestamo/create', prestamos.create);
-router.get('/api/prestamo/all', prestamos.retrieveAllPrestamos);
-router.get('/api/prestamo/onebyid/:id', prestamos.getPrestamoById);
-router.put('/api/prestamo/update/:id', prestamos.updateById);
-router.delete('/api/prestamo/delete/:id', prestamos.deleteById);
-
-
-
+router.post('/api/departamentos/create', departamentos.create);
+router.get('/api/departamentos/all', departamentos.retrieveAllDepartamentos);
+router.get('/api/departamentos/onebyid/:id', departamentos.getDepartamentoById);
+router.put('/api/departamentos/update/:id', departamentos.updateById);
+router.delete('/api/departamentos/delete/:id', departamentos.deleteById);
 
 router.post('/api/customers/create', customers.create);
 router.get('/api/customers/all', customers.retrieveAllCustomers);
